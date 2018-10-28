@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<title>Proyecto Inicio de Curso</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="js/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+	<!-- Custom fonts for this template 
+	<link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+	-->
+	<!-- Plugin CSS 
+	<link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
+	-->
+	<!-- Custom styles for this template -->
+	<link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+    <!--MENU PRINCIPAL -->
+	<nav class="navbar navbar-expand-sm fixed-top navbar-light bg-light text-uppercase" >
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<a class="navbar-brand" href="#">
+			<img src="img/LogoUnad_2.png" width="200">
+		</a>
+
+		<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+				<li class="nav-item">
+					<a class="nav-link" href="index.html">Inicio</a>
+				</li>
+				<li class="nav-item dropdown dmenu">
+					<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Lecturas</a>
+					<div class="dropdown-menu sm-menu">
+						<a class="dropdown-item" href="pasos_iniciales.html">Pasos Iniciales</a>
+						<a class="dropdown-item" href="conexion_mysql.html">Crear Conexión de Base de Datos</a>
+						<a class="dropdown-item" href="consultas_mysql.html">Hacer Consultas a la Base de Datos</a>
+						<a class="dropdown-item" href="ins_upd_mysql.html">Insertar, Actualizar y Eliminar Registros</a>
+						<a class="dropdown-item" href="cerrar_conexion.html">Cerrar Conexión de Base de Datos</a>
+					</div>
+				</li>
+				<li class="nav-item dropdown dmenu">
+					<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Multimedia</a>
+					<div class="dropdown-menu sm-menu">
+						<a class="dropdown-item" href="video_conexion.html">Video de Conexión a Bases de datos con PHP y MySQL</a>
+						<a class="dropdown-item" href="video_ins_upd.html">Video de Insertar, Modificar y Eliminar registros con PHP y MySQL</a>
+					</div>
+				</li>
+				<li class="nav-item dropdown dmenu">
+					<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Actividades</a>
+					<div class="dropdown-menu sm-menu">
+						<a class="dropdown-item" href="crear_table_mysql.html">Crear Tabla en MySQL</a>
+						<a class="dropdown-item" href="examen_php_mysql.html">Examen PHP /MySQL</a>
+						<a class="dropdown-item" href="examen_php.html">Examen PHP</a>
+					</div>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="autor.html">Autores</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<section id="blog-section" >
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8">
+					<div class="row">
+						<div class="col-lg-12 col-md-12">
+							<aside class="content-borde">
+								<div class="content-title">
+									<div class="text-center">
+										<h3><a href="javascript:void(0)">Crear Conexión de Base de Datos</a></h3>
+									</div>
+								</div>
+								<div class="content-contenido">
+									<h4>Creando las variables con los datos necesarios</h4>
+									<p>
+										Lo primero que vamos a hacer es crear las variables para almacenar los datos de la BD que utilizaremos más adelante. También podemos hacerlo directamente sin utilizar variables pero personalmente creo que mucho más limpio.
+										<br/><br/>
+										Las variables que crearemos serán las siguientes:
+										<br/>
+										<b>PHP<br/>
+										$usuario = "root";<br/>
+										$contrasena = "tu_contraseña"; <br/>
+										$servidor = "localhost";<br/>
+										$basededatos = "alumnos";<br/>
+										</b>
+									</p>
+									<h4>Crear la conexión con el servidor de base de datos con mysqli_connect()</h4>
+									<p>
+										Ahora vamos a crear la conexión con el servidor de la base de datos mediante la función mysqli_connect() utilizando los datos o variables que hemos creado hace un momento. Para ello crearemos una variable <b>$conexion</b> que contendrá la conexión.
+										<br/>
+										<b>$conexion = mysqli_connect( $servidor, $usuario, "" );</b>
+										<br/><br/>
+										En mi caso he introducido <b>“”</b> para la contraseña pero en si se tiene una definida para ese usuario de la base de datos se debe introducir la contraseña en la variable <b>$contrasena</b> y luego indicar la variable como tercer parámetro en la llamada a la función <b>mysqli_connect()</b>
+										<br/>
+										Si ejecutamos el código que tenemos hasta ahora no deberías ver nada y eso es bueno porque no estará dando ningún error.
+										<br/><br/>
+										Pero como no podemos estar seguro de que la conexión con el servidor de la base de datos sea correcta, vamos a añadir un poco de código para que muestre un mensaje en el caso de que la conexión con la base de datos no se haya podido realizar. De esta forma:
+										<br/>
+										<b>$conexion = mysqli_connect( $servidor, $usuario, "" ) or die ("No se ha podido conectar al servidor de Base de datos");</b>
+										<br/>
+										Resumiendo lo que hemos hecho hasta ahora: Hemos creado las variables con los datos que necesitaremos y posteriormente hemos creado una variable y le hemos asignado la conexión con el servidor de base de datos.
+									</p>
+									<h4>Conexión a la base de datos</h4>
+									<p>
+										Ahora que ya hemos conectado con el servidor de Base de Datos lo que tenemos que hacer es seleccionar la base de datos que vamos a utilizar. En este caso ultilizaremos una creada anteriormente con nombre de <b>alumnos</b> que ya la hemos guardado en la variable <b>$basededatos</b>.
+										<br/><br/>
+										Para seleccionar la base de datos a utilizar, usaremos la función <b>mysqli_select_db()</b> a la que le indicaremos 2 parámetros: el objeto de conexión a la base de datos que hemos creado hace un momento <b>($conexion)</b> y el nombre de la base de datos <b>($basededatos)</b>, quedando así:
+										<br/>
+										<b>$db = mysqli_select_db( $conexion, $basededatos );</b>
+										<br/><br/>
+										Si lo ejecutamos y no nos da ningún error podemos estar de enhorabuena pero, como hemos hecho antes con la conexión al servidor de base de datos, vamos a añadir también aquí la opción para que nos devuelva un mensaje de error en el caso de que algo salga mal.
+										<br/>
+										<b>$db = mysqli_select_db( $conexion, $basededatos ) or die ( "No se pudo conectar a la base de datos solicitada" );</b>
+										
+										
+								</div>
+								<div class="content-footer">
+									<span style="font-size: 16px;color: #fff;">Bibliografia.</span>
+									<span class="pull-right">
+										<a href="http://www.oscarabadfolgueira.com/conectar-una-base-datos-mysql-desde-php/">
+											Conectar a una Base de Datos MySQL desde PHP " http://www.oscarabadfolgueira.com/conectar-una-base-datos-mysql-desde-php " 
+										</a>
+									</span>                    
+								</div>
+							</aside>
+						</div>
+					</div>
+				</div>
+           
+				<div class="col-lg-4">
+
+					<!--=====================
+					======================-->
+					<div class="widget-sidebar">
+						<h2 class="title-widget-sidebar">CONTADOR DE VISITAS</h2>
+						<center>
+							<div id="sfctpl6zrw6741escdrprpalb5aa6t9uxch"></div>
+							<script type="text/javascript" src="https://counter5.wheredoyoucomefrom.ovh/private/counter.js?c=tpl6zrw6741escdrprpalb5aa6t9uxch&down=async" async></script>
+							<noscript>
+								<a href="JavaScript:void(" title="contador de visitas para blogger">
+									<img src="https://counter5.wheredoyoucomefrom.ovh/private/contadorvisitasgratis.php?c=tpl6zrw6741escdrprpalb5aa6t9uxch" border="0" title="contador de visitas para blogger" alt="contador de visitas para blogger">
+								</a>
+							</noscript>
+						</center>
+					</div>  
+
+					<!--=====================
+					======================-->
+					<div class="widget-sidebar">
+						<h2 class="title-widget-sidebar">TWITEER</h2>
+						<div style="width:350px;height: 350px;overflow: auto;">
+							<p>
+								<a class="twitter-timeline" href="https://twitter.com/unadibague?ref_src=twsrc%5Etfw">Tweets por unadibague</a> 
+								<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+							</p>
+						</div>
+					</div>  
+                 
+                 
+				</div>
+			</div>
+		</div>
+
+	</section>
+    <!-- Bootstrap core JavaScript -->
+    <script src="js/jquery/jquery.min.js"></script>
+    <script src="js/bootstrap/js/bootstrap.bundle.min.js"></script>
+  </body>
+
+</html>

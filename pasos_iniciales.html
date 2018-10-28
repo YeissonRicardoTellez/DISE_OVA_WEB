@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<title>Proyecto Inicio de Curso</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="js/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+	<!-- Custom fonts for this template 
+	<link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+	-->
+	<!-- Plugin CSS 
+	<link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
+	-->
+	<!-- Custom styles for this template -->
+	<link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+    <!--MENU PRINCIPAL -->
+	<nav class="navbar navbar-expand-sm fixed-top navbar-light bg-light text-uppercase" >
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<a class="navbar-brand" href="#">
+			<img src="img/LogoUnad_2.png" width="200">
+		</a>
+
+		<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+				<li class="nav-item">
+					<a class="nav-link" href="index.html">Inicio</a>
+				</li>
+				<li class="nav-item dropdown dmenu">
+					<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Lecturas</a>
+					<div class="dropdown-menu sm-menu">
+						<a class="dropdown-item" href="pasos_iniciales.html">Pasos Iniciales</a>
+						<a class="dropdown-item" href="conexion_mysql.html">Crear Conexión de Base de Datos</a>
+						<a class="dropdown-item" href="consultas_mysql.html">Hacer Consultas a la Base de Datos</a>
+						<a class="dropdown-item" href="ins_upd_mysql.html">Insertar, Actualizar y Eliminar Registros</a>
+						<a class="dropdown-item" href="cerrar_conexion.html">Cerrar Conexión de Base de Datos</a>
+					</div>
+				</li>
+				<li class="nav-item dropdown dmenu">
+					<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Multimedia</a>
+					<div class="dropdown-menu sm-menu">
+						<a class="dropdown-item" href="video_conexion.html">Video de Conexión a Bases de datos con PHP y MySQL</a>
+						<a class="dropdown-item" href="video_ins_upd.html">Video de Insertar, Modificar y Eliminar registros con PHP y MySQL</a>
+					</div>
+				</li>
+				<li class="nav-item dropdown dmenu">
+					<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Actividades</a>
+					<div class="dropdown-menu sm-menu">
+						<a class="dropdown-item" href="crear_table_mysql.html">Crear Tabla en MySQL</a>
+						<a class="dropdown-item" href="examen_php_mysql.html">Examen PHP /MySQL</a>
+						<a class="dropdown-item" href="examen_php.html">Examen PHP</a>
+					</div>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="autor.html">Autores</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<section id="blog-section" >
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8">
+					<div class="row">
+						<div class="col-lg-12 col-md-12">
+							<aside class="content-borde">
+								<div class="content-title">
+									<div class="text-center">
+										<h3><a href="javascript:void(0)">Pasos Iniciales</a></h3>
+									</div>
+								</div>
+								<div class="content-contenido">
+									<p>
+										Para poder realizar la conexión de PHP a MySQL se debe primero realizar la creación de la Base de Datos.
+									</p>
+									<h4>Acceder a mysql desde la consola.</h4>
+									<p>
+										Lo primero que tenemos que hacer para poder ejecutar comandos es ejecutar el programa ‘mysql‘ que si ya tenéis instalado en el ordenador o servidor, bastaría con ejecutar desde la consola el siguiente comando:
+										<br/>
+										<b>$mysql -u usuario -p</b>
+										<br/><br/>
+										Es posible que no tengáis contraseña si estáis utilizando algún paquete como XAMPP o similar. En ese caso bastaría con poner el siguiente comando:
+										<br/>
+										<b>$mysql -u root</b>
+										<br/><br/>
+										Si al ejecutar el comando mysql te un error de que no encuentra el programa, tendrás que ejecutarlo directamente en la ruta en la que está ubicado o añadir esa ruta para que podamos ejecutarlo desde cualquier directorio de nuestro disco.
+										<br/><br/>
+										Si estás utilizando XAMPP en un ordenador MAC, la ruta es: /Applications/XAMPP/xamppfiles/bin/mysql
+										<br/><br/>
+										Pero cada sistema operativo es diferente y si no utilizas XAMPP tendrás que buscar la ubicación de mysql en tu disco.
+										<br/><br/>
+										Bien, ahora ya podemos ejecutar comandos mysql ya que tendrás a la vista algo similar a lo siguiente:
+										<br/>
+										<img src="img/crear-base-de-datos-mysql-desde-consola-01.png">
+									</p>
+
+									<h4>Crear una nueva base de datos.</h4>
+									<p>
+										Ahora llega el momento de crear una nueva base de datos mysql y a estas altura ya debemos tener claro el nombre que le vamos a dar a nuestra nueva base de datos. Para este ejemplo yo voy a crear una base de datos llamada “alumnos“.
+										<br/><br/>
+										No nos entretenemos más y vamos a lo que vamos.
+										<br/><br/>
+										Para crear la base de datos “alumnos” introducimos el siguiente comando:
+										<br/>											
+										<b>CREATE DATABASE alumnos;</b>
+										<br/><br/>
+										Si, ya se que no es gran cosa lo que nos dice pero es suficiente, nos basta con saber que hemos creado la base de datos correctamente.
+										<br/><br/>
+										Pero claro, no podemos dejarlo aquí ¿verdad? habrá que hacer algo más para que sea más interesante este artículo. Pues nada, no os preocupéis que ahora vamos a crear una tabla para almacenar nuestros datos.
+
+									</p>
+									<h4>Seleccionar la base de datos a usar.</h4>
+									<p>
+										Esto es algo sencillo pero necesario.
+										<br/><br/>
+										Para que mysql sepa a qué base de datos nos vamos a referir cuando introduzcamos los comandos, debemos indicárselo mediante el comando:
+										<br/>
+										<b>USE tabla</b>
+
+										Por consiguiente, para el ejemplo que nos ocupa introducimos el siguiente comando para usar la base de datos “alumnos”:
+										<br/>
+										<b>USE alumnos;</b>
+									</p>
+									<h4>Crear una tabla en la base de datos.</h4>
+									<p>
+										Como digo, ahora vamos a crear una tabla porque sin tablas, la base de datos no nos sirve de mucho la verdad.
+										<br/><br/>
+										Para este ejemplo voy a crear una tabla muy sencilla simplemente para que veáis como funciona el asunto. Mi tabla alumnos sólo tendrá dos campos: Nombre y edad. No quiero liarlo mucho y prefiero que quede bastante claro.
+										<br/><br/>
+										Entonces, siguiendo un modelo sencillo, estos serían los campos que voy a crear en la tabla:
+										<br/>
+										<b>nombre  –>   VARCHAR(30)</b>
+										<br/>
+										<b>edad  –>  INT</b>
+										<br/><br/>
+										Ahora que ya lo tenemos claro vamos a crear la tabla con el comando “CREATE TABLE” de la siguiente forma:
+										<br/>
+										<b>CREATE TABLE alumnos (nombre VARCHAR(30), edad INT);</b>
+										<br/><br/>
+										No me voy a parar a explicar los tipos de datos de SQL pero si tenéis especial interés sobre esto, me podéis mandar un mensaje y lo valoraré.
+										<br/><br/>
+										Bueno, vamos a ver qué nos muestra la consola cuando introducimos en comando anterior:
+										<br/><br/>
+										Como siempre tan escueto pero nos sirve, nos complace ver que la tabla se ha creado correctamente.
+										<br/><br/>										 
+									</p>
+									<h4>Comprobar la tabla creada.</h4>
+									<p>
+										Este paso no es necesario pero si aconsejable ya que salimos de dudas en cuanto a que se ha creado nuestra tabla, si es que teníamos alguna duda.
+										<br/><br/>
+										Para comprobar los campos de la tabla que acabamos de crear podemos utilizar el comando DESCRIBE con el nombre de la tabla que queremos comprobar. Por lo tanto, para nuestro ejemplo ejecutamos el comando
+										<br/>
+										<b>DESCRIBE alumnos;</b>
+										<br/><br/>
+										El resultado de este comando será el siguiente:
+										<br/>
+										<img src="img/crear-base-de-datos-mysql-desde-consola-04.png">
+										<br/><br/>
+										Perfecto, la tabla aparece por lo que está creada y con los campos que queríamos.
+									</p>
+									<h4>Añadir algunos registros.</h4>
+									<p>
+										Para terminar vamos a ver cómo podemos añadir contenido a nuestra base de datos desde consola.
+										<br/><br/>
+										Antes de ejecutar los comandos, pongo a continuación los datos que voy a introducir:
+										<br/>
+										<b>Jose Sanchez       22</b>
+										<b>Alberto Jurado    19</b>
+										<b>Carlos Martin      20</b>
+										<br/><br/>
+										Pues bien, nos ponemos manos a la obra.
+										<br/><br/>
+										Para añadir registros a la base de datos usaremos el comando INSERT INTO seguido del nombre de la tabla y posteriormente VALUES seguido de los valores que queremos incluir.
+										<br/><br/>
+										Sin más, este sería el comando para introducir el primer registro que os he indicado hace un momento:
+										<br/>
+										<b>INSERT INTO alumnos VALUES ('Jose Sanchez', 22);</b>
+										<br/><br/>
+										Que nos muestra:
+										<br>
+										<img src="img/crear-base-de-datos-mysql-desde-consola-05.png">
+										<br/><br/>
+										Perfecto, pues ya que estamos, introducimos los otros dos registros.
+										<br/>										 
+										<b>INSERT INTO alumnos VALUES ('Alberto Jurado', 19);</b>
+										<br/>
+										<b>INSERT INTO alumnos VALUES ('Carlos Martín', 20);</b>
+										<br/><br/>
+									</p>
+									<h4>Comprobar los datos.</h4>
+									<p>
+										Y para terminar simplemente vamos a comprobar que la base de datos o mejor dicho, la tabla alumnos tiene los datos que acabamos de introducir.
+										<br/><br/>
+										Para mostrar los datos de una tabla podemos usar el comando SELECT FROM para que  nos muestre todos los registros (*) de la tabla:
+										<br/>
+										<b>SELECT * FROM alumnos;</b>
+										<br/><br/>
+										Este comando nos debería mostrar lo siguiente:
+										<br/>
+										<img src="img/crear-base-de-datos-mysql-desde-consola-06.png">
+									</p>
+								</div>
+								<div class="content-footer">
+									<span style="font-size: 16px;color: #fff;">Bibliografia.</span>
+									<span class="pull-right">
+										<a href="http://www.oscarabadfolgueira.com/crear-una-base-datos-mysql-desde-consola/">
+											Crear una base de datos MySQL desde consola
+											" http://www.oscarabadfolgueira.com/crear-una-base-datos-mysql-desde-consola/ "
+										</a>
+									</span>                    
+								</div>
+							</aside>
+						</div>
+					</div>
+				</div>
+           
+				<div class="col-lg-4">
+
+					<!--=====================
+					======================-->
+					<div class="widget-sidebar">
+						<h2 class="title-widget-sidebar">CONTADOR DE VISITAS</h2>
+						<center>
+							<div id="sfctpl6zrw6741escdrprpalb5aa6t9uxch"></div>
+							<script type="text/javascript" src="https://counter5.wheredoyoucomefrom.ovh/private/counter.js?c=tpl6zrw6741escdrprpalb5aa6t9uxch&down=async" async></script>
+							<noscript>
+								<a href="JavaScript:void(" title="contador de visitas para blogger">
+									<img src="https://counter5.wheredoyoucomefrom.ovh/private/contadorvisitasgratis.php?c=tpl6zrw6741escdrprpalb5aa6t9uxch" border="0" title="contador de visitas para blogger" alt="contador de visitas para blogger">
+								</a>
+							</noscript>
+						</center>
+					</div>  
+
+					<!--=====================
+					======================-->
+					<div class="widget-sidebar">
+						<h2 class="title-widget-sidebar">TWITEER</h2>
+						<div style="width:350px;height: 350px;overflow: auto;">
+							<p>
+								<a class="twitter-timeline" href="https://twitter.com/unadibague?ref_src=twsrc%5Etfw">Tweets por unadibague</a> 
+								<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+							</p>
+						</div>
+					</div>  
+                 
+                 
+				</div>
+			</div>
+		</div>
+
+	</section>
+    <!-- Bootstrap core JavaScript -->
+    <script src="js/jquery/jquery.min.js"></script>
+    <script src="js/bootstrap/js/bootstrap.bundle.min.js"></script>
+  </body>
+
+</html>
